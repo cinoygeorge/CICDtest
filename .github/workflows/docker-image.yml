@@ -3,9 +3,6 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
 
 jobs:
   build:
@@ -23,7 +20,7 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           IMAGE_NAME: my-image
         run: |
-          docker build -t $DOCKERHUB_USERNAME/$IMAGE_NAME .
+          docker build -t $DOCKERHUB_USERNAME/$IMAGE_NAME
           docker push $DOCKERHUB_USERNAME/$IMAGE_NAME:latest
 
   test:
