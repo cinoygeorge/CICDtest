@@ -18,10 +18,10 @@ jobs:
       - name: Build, tag, and push image to DockerHub
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          IMAGE_NAME: my-image1
+          IMAGE_NAME: my-image2
         run: |
           docker build -t $IMAGE_NAME .
-          docker push $IMAGE_NAME:latest
+          docker push $DOCKERHUB_USERNAME/IMAGE_NAME
 
   test:
     runs-on: ubuntu-latest
