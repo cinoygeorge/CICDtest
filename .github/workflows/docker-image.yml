@@ -23,7 +23,7 @@ jobs:
           
         run: |
           docker build -t $imgname .         
-          docker push $username/$imgtagname
+          docker push $username/$imgname
 
   test:
     runs-on: ubuntu-latest
