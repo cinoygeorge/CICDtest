@@ -18,12 +18,12 @@ jobs:
       - name: Build, tag, and push image to DockerHub
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          imgname: my-imagecheck
+          imgname: my-imagechecking
           imgtagname: my-imagedocker
           
         run: |
           docker build -t $imgname .         
-          docker push $imgname:latest
+          docker push $DOCKERHUB_USERNAME/imgname:latest
 
   test:
     runs-on: ubuntu-latest
