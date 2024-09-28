@@ -21,8 +21,8 @@ jobs:
           imgname: my-image2
         run: |
           docker build -t $imgname .
-          docker tag $imgname $username/firstdockerpipe
-          docker push $username/firstdockerpipe
+          docker tag $imgname $username/imgname
+          docker push $username/imgname
 
   test:
     runs-on: ubuntu-latest
